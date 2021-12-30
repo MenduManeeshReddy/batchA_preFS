@@ -1,0 +1,80 @@
+Tubby a UKG Student has given a group of letters and His madam asked to see if the group of 
+letters consists of every letter in the English Aplhabet(a-z/A-Z)
+
+print true if it contains else print false
+
+Note: The input can contain whitespaces.
+
+
+Sample Test Case -1 
+
+input =The quick brown fox jumps over the lazy dog 
+output = true 
+
+Explanation 
+The given input line Contains all the characters from ‘a’ to ‘z’ or 'A' to 'Z'
+ 
+
+Sample Test Case -2 
+
+input =ThequickBrownfoxjumpsOverThelazy doG 
+output = true 
+
+Explanation 
+The given input line Contains all the characters from ‘a’ to ‘z’ or 'A' to 'Z' 
+
+Sample Test Case - 3
+
+input =AbcEfghuIJkzlMnOpqrsTuvWxyD
+output = true
+
+Explanation 
+The given input line Contains all the characters from ‘a’ to ‘z’ or 'A' to 'Z' 
+
+**********************************************************************************************
+
+import java.util.*;
+class D3_2{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        s=s.replace(" ","");
+        String s1=s.toLowerCase();
+        char[] c=s1.toCharArray();
+        Set<Character> set=new HashSet();
+        Collections.addAll(set,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+        for(int i=0;i<c.length;i++){
+            if(set.contains(c[i])){
+                set.remove(c[i]);
+            }
+        }
+        if(set.isEmpty()){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
+    }
+}
+***********************************************************************************************
+
+import java.util.*;
+class test{
+    public static boolean check(String str){
+        boolean[] k = new boolean[26];
+        int index = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if ('A' <= str.charAt(i) && str.charAt(i) <= 'Z')
+                index = str.charAt(i) - 'A';
+            else if ('a' <= str.charAt(i) && str.charAt(i) <= 'z')
+                index = str.charAt(i) - 'a';
+            else
+                continue;
+            k[index] = true;
+        }
+        for (int i = 0; i <= 25; i++)
+            if (k[i] == false)
+                return false;
+ 
+        return true;
+    }
