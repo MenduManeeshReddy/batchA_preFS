@@ -1,0 +1,59 @@
+Sunder and Shiva are playing a word game where shiva gives a number 'k' and word 'w' to the sunder and 
+sunder removes the first letter from the start and places it at the end(k times)
+
+
+Sample Test Case - 1
+input = 
+hello
+2
+output = 
+llohe
+
+
+Sample Test Case-2
+
+input = 
+good
+3
+output = dgoo
+**************************************
+import java.util.*;
+
+class D3_1
+{
+       
+       
+        
+    static String lr(String s,int n)
+    {
+        String ans=s.substring(n)+s.substring(0,n);
+        return ans;
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String s1=sc.nextLine();
+        int n=sc.nextInt();
+        System.out.println(lr(s1,n));
+    }
+    
+}
+************************************
+import java.util.*;
+class prog1{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String k=sc.next();
+        int w=sc.nextInt();
+        StringBuilder sb=new StringBuilder(k);
+        String temp="";
+        char[] c=k.toCharArray();
+        for(int i=0;i<w;i++){
+            temp+=c[i];
+        }
+        sb.delete(0,w);
+        sb.append(temp);
+        System.out.println(sb);
+    }
+}
+       
