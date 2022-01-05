@@ -1,0 +1,73 @@
+Stanely a old grand father reads a news paper daily.
+While reading a newspaper his grandsone sits besides him. 
+His grandson is intresed in the puzzle given in the newspaper. 
+In the puzzle there will be few rows and columns which contains only alphabets 
+and a new word will be given at the end. 
+we have to find whether the word is present in the above given rows or columns and 
+print the corresponding row and column indices .
+Help Stanely and his grandsone to solve this. 
+
+
+assume the length of the word is <= rowsize/columnsize
+and the word may be present either vertically or horizontally
+
+if the word is not present print -1
+
+
+Sample Test Case
+input = 3 3
+a b c
+d e f
+g h i
+ef
+output = 
+1 1 1 2
+
+Explanation
+The word "ef" is found at index (1,1) and ends at (1,2)
+
+Sample Test Case-2
+input = 3 3
+a b c
+d e f
+g h i
+ghi
+output = 
+2 0 2 2
+
+Explanation
+The word "ghi" is found at index (2,0) and ends at (2,2)
+
+
+Sample Test Case-2
+input = 3 4
+a b c d
+d e f g
+g h i k
+fi
+output = 
+1 2 2 2
+
+Explanation
+The word "fi" is found at index (1,2) and ends at (2,2)
+
+
+Sample Test Case-3
+input = 
+2 2
+a d
+z x
+af
+output = 
+-1
+
+
+Sample Test Case-3
+input =
+3 3
+q w e
+a s d
+z x c
+qe
+output = 
+-1
