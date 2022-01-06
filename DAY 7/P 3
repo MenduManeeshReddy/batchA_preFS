@@ -1,0 +1,125 @@
+In a class of XII computer teacher asked one of the student to perform a task as practical session .
+
+There is a box contains N balls in it, each ball is printed with a positive integer.
+The teacher ask the student to split all the balls in the box into ball-groups, 
+each group should contain exatly S balls.
+
+The student has to pick the ball-groups as follows:
+	- the balls should be numbered consecutively.
+	e.g., 1,2 3, 4 or 4,5,6,7 etc.
+
+Finally, the student should say whether it is possible to 
+split all the balls in the box, into ball-groups accordingly.
+
+Now. its your task to help the student to find whether it is possible or not.
+if possible, print "true".
+otherwise, print "false".
+
+Input Format:
+-------------
+Line-1: Two integers N and S, number of balls and size of ball-group.
+Line-2: N space separated integers, integers printed on each ball.
+
+Output Format:
+--------------
+Print a boolean value, whether it is possible to split all the balls into groups.
+
+
+Sample Input-1:
+---------------
+8 4
+2 6 3 4 3 5 4 5
+
+Sample Output-1:
+----------------
+true
+
+Explanation:
+-------------
+Ball-groups are [2,3,4,5] and [3,4,5,6]
+
+
+Sample Input-2:
+---------------
+12 3
+12 2 9 5 3 4 13 7 6 8 11 7
+
+Sample Output-2:
+----------------
+true
+
+Explanation:
+-------------
+Ball-groups are [2,3,4], [5,6,7], [7,8,9] and [11,12,13]
+
+
+Sample Input-3:
+---------------
+6 3
+2 5 7 3 4 8
+
+Sample Output-3:
+----------------
+false
+
+Explanation:
+-------------
+you cannot form ball groups.
+
+case =1
+input =8 4
+2 6 3 4 3 5 4 5
+output =true
+
+case =2
+input =6 3
+2 5 7 3 4 8
+output =false
+
+case =3
+input =12 3
+12 2 9 5 3 4 13 7 6 8 11 7
+output =true
+
+case =4
+input =40 8
+4 5 6 7 8 9 10 71 72 73 74 75 52 53 54 55 56 57 58 59 76 77 78 91 90 89 87 86 88 85 84 11 12 33 34 35 36 37 38 38 40
+output =false
+
+
+sol:
+
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        ArrayList<Integer> a=new ArrayList<Integer>();
+        ArrayList<Integer> b=new ArrayList<Integer>();
+        for(int i=0;i<n;i++){
+            a.add(sc.nextInt());
+        }
+        int z=n/m;
+        Collections.sort(a);
+        for(int i=0;i<z;i++){
+            int t=a.get(0);
+            for(int j=0;j<m;j++){
+                int temp=t+j;
+                if(a.contains(temp)){
+                    b.add(temp);
+                    a.remove(new Integer(temp));
+                }
+            } 
+            if(b.size()!=m){
+                System.out.println("false");
+                System.exit(0);
+            }
+            else{
+                b.clear();
+            }
+        }
+        System.out.println("true");
+    }
+}
+******************************
