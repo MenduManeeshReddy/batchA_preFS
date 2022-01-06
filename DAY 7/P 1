@@ -112,4 +112,47 @@ public class prog1 {
 		}
 	}
 }
-
+************************************
+import java.util.*;
+class second{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[][]=new int[n][n];
+        int x=1;
+        int y=n;
+        int a=0;
+        int b=0;
+        while(a<n && b<n){
+            for(int c=a;c<n;c++){
+                arr[a][c]=x;
+                x++;
+            }
+            for(int c=a+1;c<n;c++){
+                arr[c][n-1]=x;
+                x++;
+            }
+            if(a<=n){
+                for(int c=n-2;c>=b;c--){
+                    arr[n-1][c]=x;
+                    x++;
+                }
+            }
+            if(b<=n){
+                for(int c=n-2;c>a;c--){
+                    arr[c][b]=x;
+                    x++;
+                }
+            }
+            a++;
+            b++;
+            n--;
+        }
+        for(int c=0;c<y;c++){
+            for(int d=0;d<y;d++){
+                System.out.print(arr[c][d]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
