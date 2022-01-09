@@ -59,3 +59,19 @@ class D6_1{
         }
     }
 }
+**************************************
+import java.util.*;
+class Test {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+     String str = sc.next(); 
+      char sArr[] = str.toCharArray();
+      String code = sc.next();
+      StringBuilder text = new StringBuilder();
+      for (int i=0; i<code.length(); i = i+2) {
+        Integer num = Integer.parseInt(code.substring(i,i+2));
+        text.append(sArr[num-1]);
+	  }
+      System.out.println(text.toString());
+    }
+  }
