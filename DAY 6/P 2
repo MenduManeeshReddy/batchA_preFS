@@ -80,3 +80,36 @@ class D6_2{
         }
     }
 }
+************************
+import java.util.*;
+class Test5 {
+	 public String removeDuplicates(String S) {
+		    StringBuilder sb = new StringBuilder();
+		    int sbLength = 0;
+		    for(char character : S.toCharArray()) {
+		      if (sbLength != 0 && character == sb.charAt(sbLength - 1))
+		        sb.deleteCharAt(sbLength-- - 1);
+		      else {
+		        sb.append(character);
+		        sbLength++;
+		      }
+		    }
+		    return sb.toString();
+		  }
+	 
+public static void main(String[] args)
+    {
+    Scanner sc=new Scanner(System.in);
+      String str=sc.next();
+       
+       
+		   
+	   String str1 = new Test5().removeDuplicates(str);
+
+	   if(str1.length()!=0)
+          System.out.println(str1);
+	   else
+		   System.out.println(-1);
+      }  
+}
+
